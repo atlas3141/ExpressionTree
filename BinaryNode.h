@@ -21,7 +21,7 @@ class BinaryNode{
   void printData();
  private:
   BinaryNode* right;
-  BinaryNode* left;
+  BinaryNode* left; //a magical type that saves like a byte of data
   union data_t{
     char c;
     int i;

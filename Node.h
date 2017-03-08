@@ -18,7 +18,7 @@ class Node{
   void setNext(Node* n);
  private:
   Node* next;
-  union data_t{
+  union data_t{ //a magic type that saves bytes
     char c;
     int i;
   } data;

@@ -49,9 +49,9 @@ int BinaryNode::getType(){
 }
 void BinaryNode::printData(){
   if (type == 1)
-    cout << data.c << endl;
+    cout << data.c << " ";
   else
-    cout << data.i << endl;
+    cout << data.i << " ";
 }
 
 

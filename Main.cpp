@@ -40,36 +40,36 @@ int main(){
 //print tree
 void print(BinaryNode* node, int indent){ 
   
-  if (node->getLeft())
-    print(node->getLeft(),indent+1);
+  if (node->getRight())
+    print(node->getRight(),indent+1);
   for(int j = 0; j <= indent; j++){
     cout << "   ";
   }
   node->printData();
   cout << endl;
-  if (node->getRight()) 
-    print(node->getRight(),indent+1);
+  if (node->getLeft()) 
+    print(node->getLeft(),indent+1);
 }
 //print the equation types
 void printPostfix (BinaryNode* node){
   if (node->getType() == 1){
-    printPostfix(node->getLeft());
     printPostfix(node->getRight());
+    printPostfix(node->getLeft());
   }
   node->printData();
 }
 void printPrefix (BinaryNode* node){
   node->printData();
   if (node->getType() == 1){
-    printPrefix(node->getLeft());
     printPrefix(node->getRight());
+    printPrefix(node->getLeft());
   }
 }
 void printInfix(BinaryNode* node){
   if (node->getType() == 1){
-    printInfix(node->getLeft());
-    node->printData();
     printInfix(node->getRight());
+    node->printData();
+    printInfix(node->getLeft());
   }
   else{
     node->printData();
